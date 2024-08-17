@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -21,6 +21,11 @@ const Navbar = () => {
             <li>
               <Link to={"/jobs"} onClick={() => setShow(!show)}>
                 JOBS
+              </Link>
+            </li>
+            <li>
+              <Link to={"/about"} onClick={() => setShow(!show)}>
+                About
               </Link>
             </li>
             {isAuthenticated ? (

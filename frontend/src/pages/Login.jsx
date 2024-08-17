@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { clearAllUserErrors, login } from "../store/slices/userSlice";
@@ -87,6 +87,11 @@ const Login = () => {
             <Link to={"/register"}>Register Now</Link>
           </form>
         </div>
+        {/* <div className="login-image-container">
+          <div className="imgage-secttion">
+            <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1723636800&semt=ais_hybrid" alt="imgae-login" />
+          </div>
+        </div> */}
       </section>
     </>
   );

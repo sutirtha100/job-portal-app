@@ -8,7 +8,7 @@ const HowItWorks = () => {
     <section className="howItWorks">
       <h3>How does it work?</h3>
       <div className="container">
-        <div className="card">
+        <div className="card" data-aos="fade-up-right">
           <div className="icon">
             <LuUserPlus />
           </div>
@@ -19,7 +19,7 @@ const HowItWorks = () => {
             Customize your profile to highlight your skills or requirements.
           </p>
         </div>
-        <div className="card">
+        <div className="card" data-aos="fade-up-left">
           <div className="icon">
             <VscTasklist />
           </div>
@@ -30,7 +30,7 @@ const HowItWorks = () => {
             to find jobs that match your skills and preferences.
           </p>
         </div>
-        <div className="card">
+        <div className="card" data-aos="fade-up-right">
           <div className="icon">
             <BiSolidLike />
           </div>
