@@ -46,14 +46,17 @@ const TopNiches = () => {
       <div className="grid">
         {services.map((element) => {
           return (
-            <div className="card" key={element.id}>
+            <div className="card" key={element.id} data-aos="fade-right">
               <h4>{element.service}</h4>
+              <div className="subdescription">
               <p>{element.description}</p>
+              </div>
             </div>
           );
         })}
       </div>
     </section>
+
   );
 };
 

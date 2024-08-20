@@ -14,6 +14,39 @@ input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(126, 223, 255); 
+  border-radius: 40px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient( 90.5deg,  rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6% );
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #000;
+  background-color: rgb(255, 206, 114);
+}
+
+::selection {
+  color: #000;
+  background-color: 
+  #FDD819;
+}
+
 .btn,
 .black_btn,
 .outline_btn {
@@ -74,11 +107,16 @@ input::-webkit-outer-spin-button {
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(133, 133, 133);
-  padding: 20px 110px;
+  padding: 10px 80px;
   align-items: center;
+  /* background-color: #000; */
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(147,230,241,1) 0%, rgba(145,192,241,1) 45.5% );  z-index: 999;
 }
 .navbar .hamburger {
   display: none;
@@ -112,8 +150,9 @@ input::-webkit-outer-spin-button {
 }
 .navbar .links ul li a {
   text-decoration: none;
-  color: #444;
+  color: #fff;
   transition: 0.3s;
+  padding-right: 20px;
 }
 .navbar .links ul li a:hover {
   color: #dfdf07;
@@ -248,8 +287,8 @@ input::-webkit-outer-spin-button {
 }
 
 footer {
-  background: #111;
-  display: flex;
+  /* background: #111; */
+  background-image: radial-gradient( circle 966px at 6.9% 10.8%,  rgba(92,123,237,1) 0%, rgba(147,186,252,1) 90% );  display: flex;
   border-bottom: 1px solid rgb(133, 133, 133);
   padding: 40px 20px 20px 20px;
 }
@@ -297,11 +336,12 @@ footer div ul a span {
   display: flex;
 }
 .copyright {
-  background: #111;
+  background-image: linear-gradient( 86.3deg,  rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6% );
+
   display: flex;
   justify-content: center;
   text-align: center;
-  color: #8080805c;
+  color: #fff;
   font-weight: 300;
   padding: 20px;
 }
@@ -337,15 +377,30 @@ footer div ul a span {
 
 .hero {
   min-height: 800px;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   min-width: 1700px;
   max-width: 1700px;
   margin: 0 auto;
   gap: 50px;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url("https://media.istockphoto.com/id/1309537153/photo/female-hand-holds-black-binoculars-on-a-bright-yellow-background.jpg?s=612x612&w=0&k=20&c=ZGxPIdWGwLCNzSQkyEM1INKbtesryhzWro3edPVH2uU="); */
+  background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
+  background-size: cover;
+  /* background-position: center;
+  filter: blur(8px); */
+  z-index: -1; 
+}
+
 .hero h1 {
   font-size: 3rem;
   text-transform: uppercase;
@@ -354,7 +409,7 @@ footer div ul a span {
 .hero h4 {
   font-size: 1.5rem;
   font-weight: 500;
-  color: gray;
+  color: #fff;
 }
 .hero .box {
   max-width: 900px;
@@ -366,6 +421,7 @@ footer div ul a span {
   letter-spacing: 1px;
   font-weight: 500;
   transition: 0.3s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .hero .box:hover {
   transform: translateY(-10px);
@@ -373,6 +429,84 @@ footer div ul a span {
   background: #111;
   color: #fff;
 }
+
+.hero-section-conainer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 200px;
+}
+.left-container-hero{
+  width: 50%;
+  height: 500px;
+}
+.heading-span{
+  padding-left:0px;
+}
+.heading-span h5{
+  font-weight: 600;
+  font-size: 65px;
+  line-height: 75px;
+  overflow-y: hidden;
+  color: #fff;
+  line-break: anywhere;
+}
+.heading-span span{
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 75px;
+  overflow-y: hidden;
+  color: #fff;
+}
+
+.subtitle-hero-sec{
+  padding-top: 80px;
+}
+.subtitle-hero-sec p{
+  width: 100ch;
+  animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 1em;
+}
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+.img-hero-container{
+  height: 500px;
+}
+.img-hero-container img{
+  background-blend-mode: difference;
+}
+.right-container-hero{
+  width: 50%;
+  height: 500px;
+}
+.floating {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
+
 @media (max-width: 1720px) {
   .hero {
     min-width: 100%;
@@ -390,7 +524,7 @@ footer div ul a span {
 }
 
 .services {
-  padding: 50px 0;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -401,35 +535,76 @@ footer div ul a span {
   gap: 50px;
 }
 .services h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 600;
-  color: #dfdf07;
+  color: #020BFF;
   text-transform: uppercase;
 }
 .services .grid {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 50px;
+  padding-bottom: 80px;
+  width: 100%;
+  flex-wrap: wrap;
 }
-.services .grid .card {
-  background: black;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 32px 20px;
-  border-radius: 6px;
-  transition: 0.3s;
+.card {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  margin: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.services .grid .card:hover {
-  background: #dfdf07;
-  color: #111;
-  transition: 0.3s;
+
+.card:hover {
+  transform: translatey(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
 }
-.services .grid .card h4 {
+
+h4 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
   font-weight: 600;
-  text-transform: uppercase;
 }
+
+.subdescription {
+  color: #000;
+  font-size: 1em;
+}
+.subdescription:hover{
+  transform: translateX(2px);
+  background-image: linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% );
+  transition: 0.3s ease-out;
+  border-radius: 8px;
+}
+.subdescription p {
+  margin-top: 10px;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border-radius: 15px 15px 0 0;
+}
+
+.card:hover:before {
+  background: linear-gradient(90deg, #feb47b, #ff7e5f);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
 @media (max-width: 1720px) {
   .services {
     min-width: 100%;
@@ -445,7 +620,8 @@ footer div ul a span {
   align-items: center;
   margin: 0 auto;
   gap: 50px;
-  background: #dfdf07;
+  /* background: #dfdf07; */
+  background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
 }
 .howItWorks h3 {
   font-size: 1.75rem;
@@ -457,21 +633,28 @@ footer div ul a span {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  overflow: hidden;
 }
 .howItWorks .container .card {
-  background: #fff;
-  padding: 30px 50px;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+  /* padding: 30px 30px; */
   display: flex;
+  width: 1000px !important;
   flex-direction: column;
   gap: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  margin: 30px;
 }
 .howItWorks .container .card:hover {
   transition: 0.3s;
   transform: translateY(-10px);
   background: #111;
   color: #fff;
+  /* background-image: url("https://img.freepik.com/premium-photo/it-industry-modern-technologies-man-presses-screen_438099-7030.jpg"); */
+  /* filter: blur(4px); Adjust the blur intensity as needed */
+
 }
 .howItWorks .container .card .icon {
   width: fit-content;
@@ -515,10 +698,30 @@ footer div ul a span {
 
 .authPage {
   display: flex;
-  min-width: 1500px;
-  max-width: 1500px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-width: 600px;
+  max-width: 600px;
   margin: 0 auto;
   min-height: 100vh;
+  margin-top: 80px;
+
+}
+
+.authPage::before{
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
+
+  /* background-image: url("https://media.istockphoto.com/id/1205881259/photo/office-table-top-view.webp?b=1&s=170667a&w=0&k=20&c=ftWOjSBVYJHNcUDRdEiLE1xKWLcBoAWUQ7LyWJ3zRb0="); */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Adjust the blur intensity as needed */
+  z-index: -1;
 }
 .authPage .container {
   flex: 1;
@@ -530,7 +733,10 @@ footer div ul a span {
   max-width: 1500px;
 }
 .authPage .login-container {
-  max-width: 620px;
+  max-width: 500px;
+  margin: 20px 80px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .authPage .container .header {
   display: flex;
@@ -586,7 +792,7 @@ footer div ul a span {
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: #dfdf07;
+  background: #020BFF;
   height: 46px;
   padding: 8px;
   color: #fff;
@@ -598,17 +804,17 @@ footer div ul a span {
   margin-top: 25px;
   font-weight: 700;
   color: #fff;
-  background: #dfdf07;
+  background: #020BFF;
   font-size: 1.2rem;
   border-radius: 7px;
 }
 .authPage .container form a {
   padding: 12px;
   text-align: center;
-  border: 1px solid #dfdf07;
+  border: 1px solid #020BFF;
   margin-top: 25px;
   font-weight: 700;
-  color: #dfdf07;
+  color: #020BFF;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 7px;
@@ -656,7 +862,12 @@ footer div ul a span {
     display: none;
   }
 }
-
+.login-image-container{
+  width: 100%;
+}
+.imgage-secttion{
+  width: 100%;
+}
 .jobs {
   padding: 40px 100px;
   min-height: 800px;
@@ -1236,12 +1447,15 @@ footer div ul a span {
   }
 }
 
-/* .application_page {
+.application_page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 70px 20px;
   gap: 20px;
+  background-image: linear-gradient( 107.7deg,  rgba(235,230,44,0.55) 8.4%, rgba(252,152,15,1) 90.3% );
+  width: 100%;
+  overflow: hidden;
 }
 .application_page h1 {
   font-size: 32px;
@@ -1259,7 +1473,8 @@ footer div ul a span {
 }
 .application_page div input,
 .application_page div textarea {
-  background: #8080805e;
+  background: #f0fff0;
+  border-radius: 8px;
   border: none;
   color: #555;
   padding: 8px 3px;
@@ -1271,7 +1486,7 @@ footer div ul a span {
   .application_page div {
     min-width: 100%;
   }
-} */
+}
 
 .application_page {
   display: flex;
@@ -1279,6 +1494,7 @@ footer div ul a span {
   max-width: 1500px;
   min-width: 1500px;
   margin: 0 auto;
+
 }
 .application_page form {
   display: flex;
@@ -1412,4 +1628,128 @@ button:disabled:hover {
   background: gray;
   cursor: not-allowed;
   color: #111;
+}
+
+.about-us-container {
+  padding: 100px 100px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
+width: 100%;
+}
+.about-us-container::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url("https://i.pinimg.com/736x/f0/32/2d/f0322d86f065c6652464d836bcd3e052.jpg"); */
+  filter: blur(8px); /* Adjust the blur intensity as needed */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+.about-us-container h1 {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.about-us-container h2 {
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.about-us-container p {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.about-us-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-us-container li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* JobCard.css */
+.job-card-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the start */
+  gap: 20px; /* Add gap between the cards for consistent spacing */
+}
+
+.job-card {
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:nth-child(4) {
+  margin-left: 0; /* Remove margin-left for the 4th card */
+}
+
+
+.job-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-card-header {
+  background-color: #3498db;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.job-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.company-name {
+  font-size: 1em;
+  opacity: 0.8;
+}
+
+.job-card-body {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.job-location, .job-type, .job-salary {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.job-description {
+  margin-top: 10px;
+  color: #333;
+}
+
+.job-card-footer {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+}
+
+.apply-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #c0392b;
 }

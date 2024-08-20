@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
+import About from "./pages/About";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const App = () => {
             element={<PostApplication />}
           />
           <Route path="/register" element={<Register />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
